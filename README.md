@@ -1,3 +1,4 @@
+
 # Minimal replica in a distributed database 
 
 	Version 1.0	
@@ -47,26 +48,27 @@
 	on subsets of the transactions. We would want non-miners to share the calculation work for the verifications, 
 	thus lower the transaction costs. 
 	
-	Suppose all transactions to be processed are grouped by previous blocks into arrays with prespecified 2^n number 
-	of transactions in each array. 
-	For each array, a merekle tree with the transactions in the arrays as it leaf nodes will be created. The minimal 
-	calculation work includes
+	Suppose all transactions to be processed are grouped by previous blocks into arrays with prespecified 2^n 
+	number of transactions in each array. 
+	For each array, a merekle tree with the transactions in the arrays as it leaf nodes will be created. 
+	The minimal calculation work includes
 		a.  verifying upto 2n+1 number of account ownerships and states
 		b.  2^n+1 number of hash values as entries to be inserted in the database
 		c.  2^n-1 number of hash values to build a Merkle tree
-		d. In order to verify the consistancy of the a Minimal Replica, root hash of the Minimal Replica needs to 
-		be recalculated and included in the block header  
+		d. In order to verify the consistancy of the a Minimal Replica, root hash of the Minimal 
+		Replica needs to be recalculated and included in the block header  
 		e. proof-of-work to link a new block to the Blockchain
 		
-	There is a dynamically defined M(t) number of pools where the arrays are allocated to.  M(t) was updated by last 
-	block in the Blockchain at t. 
+	There is a dynamically defined M(t) number of pools where the arrays are allocated to.  M(t) was updated 
+	by last block in the Blockchain at t. 
 	
-	At time t<s, a new candidate transaction X(t,i, j) is broadcasted by account i, after i obtained the approval of j. 
-	However, in order for the transaction to be processed, it needs to contribute to the system first by solving for the 
-	exsiting transactions, so it will at the same time broadcast 
-		a. last observed block time t, thus could observe a rule* to work in only one specified pool M(t, i) 
-		of M(t) pools 
-		b. choose only one array Ai in the pool and solve a nonce in order to gain the right to work on the array. 
+	At time t<s, a new candidate transaction X(t,i, j) is broadcasted by account i, after i obtained the 
+	approval of j. However, in order for the transaction to be processed, it needs to contribute to the system 
+	first by solving for the exsiting transactions, so it will at the same time broadcast 
+		a. last observed block time t, thus could observe a rule* to work in only one specified pool 
+		M(t, i) of M(t) pools 
+		b. choose only one array Ai in the pool and solve a nonce in order to gain the right to 
+		work on the array. 
 		c. Verify at least R transactions and their related account balances in the array.
 		d. Sign its own transaction ID in each of the transactions it verified.
 	
