@@ -46,8 +46,7 @@
 	We would still use the proof-of-work to form a block-chain, thus time-stamping the  transactions. However, 
 	instead of letting every miner work on the same set of transactions, we would want them to work in parallel 
 	on subsets of the transactions. We would want non-miners to share the calculation work for the verifications, 
-
-thus lower the transaction costs. 
+	thus lower the transaction costs. 
 	
 	Suppose all transactions to be processed are grouped by previous blocks into arrays with prespecified 2^n 
 	number of transactions in each array. 
