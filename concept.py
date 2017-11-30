@@ -89,7 +89,6 @@ class Trie:
 			return self._find(val, self.root)
 		else:
 			return False
-
 	def _find(self, val, node):
 		if(len(val)==0):
 			if(node.l == None and node.r == None):
@@ -138,8 +137,9 @@ class Trie:
 trie = Trie()
 
 
-nb = 1167
-# visa process 1167 transactions per seconds
+nb = 1667
+# visa process 1167 transactions per second on average
+# http://www.altcointoday.com/bitcoin-ethereum-vs-visa-paypal-transactions-per-second/
 accounts = [hashlib.sha256(str(random.uniform(1,100000000)).encode()).hexdigest() for i in range(nb)]
 spins = [random.uniform(1,100000000) for i in range(nb)]
 spxs = [random.uniform(1,100000000) for i in range(nb)] 
