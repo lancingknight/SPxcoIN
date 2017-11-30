@@ -110,8 +110,7 @@ class Trie:
 		if (self.root != None):
 			return self._delete(val, self.root, None, 0)
 		else:
-			return False
-
+			return F
 	def _delete(self, val, node, parent, lr):
 		if len(val)>0:
 			if (val[0]=='0'):
@@ -155,7 +154,6 @@ state_list2 = [new_state(accounts2[i], 1, spins2[i], spxs2[i]) for i in range(nb
 hash_list2 = [hash(st) for st in state_list2]
 
 current_milli_time = lambda: int(round(time.time() * 1000))
-#trie.add(hex2bin(hash_list[0]))
 
 start = current_milli_time()
 for x in hash_list:
