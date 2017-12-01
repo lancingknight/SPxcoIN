@@ -6,9 +6,10 @@
 	November 30, 2017
 
 ## Abstract
-	A crypto-currency protocol to minimize the distributed database and simplify verification procedures.  
-	We created a protocol to enable large number of transactions at low cost or no cost. We also deviced 
-	a protocol for listing and trading of standardized contracts within the system.
+	A crypto-currency protocol to minimize the distributed database and simplify verification procedures. 
+	It makes easy to verify the holdings of multiple assets. We created a protocol for listing and 
+	trading of standardized contracts within the system, which enables large number of transactions 
+	at low cost or no cost. 
 
 ## Minimal Replica
 	
@@ -49,11 +50,11 @@
 	thus lower the transaction costs. 
 	
 	Suppose all transactions to be processed are grouped by previous blocks into arrays with prespecified 2^n 
-	number of transactions in each array. 
+	number of transactions in each array. Suppose each transaction has upto m counterparties. 
 	For each array, a merekle tree with the transactions in the arrays as it leaf nodes will be created. 
 	The minimal calculation work includes
-		a.  verifying upto 2n+1 number of account ownerships and states
-		b.  2^n+1 number of hash values as entries to be inserted in the database
+		a.  verifying upto m*2^n number of account ownerships and states
+		b.  m*2^n number of hash values as entries to be inserted in the database
 		c.  2^n-1 number of hash values to build a Merkle tree
 		d. In order to verify the consistancy of the a Minimal Replica, root hash of the Minimal 
 		Replica needs to be recalculated and included in the block header  
@@ -69,7 +70,8 @@
 		M(t, i) of M(t) pools 
 		b. choose only one array Ai in the pool and solve a nonce in order to gain the right to 
 		work on the array. 
-		c. Verify at least R transactions and their related account balances in the array.
+		c. Verify at least R transactions and their related account balances in the array. 
+		If there are m counterparties in the transaction, R*(m-1) transactions needs to be verified. 
 		d. Sign its own transaction ID in each of the transactions it verified.
 	
 	If its processing speed and bandwidth is fast enough, it may also choose to work as a miner instead. 
@@ -112,7 +114,7 @@
 	A series of quorums could be called by increasing fees and numbers in the qurorum. 
 	
 	Once consensus is reached at the quorum(s) or the block is left unchallenged before the grace period 
-	ends, a block time spot t before s can be found that all blocks before it are no longer related to any 
+	ends, a block time spot t before s can be found that all blocks before t are no longer related to any 
 	unprocessed orders. A user could decide to delete all transactional information and keep only the headers 
 	in BlockChain before and including t and replace the deleted transactional infomation by an updated Minimal 
 	Replica {Ht} in its own database. 
@@ -152,9 +154,9 @@
 	will insert the orders into buy-order or sell-order queue.  Limit order with higher (lower) price will have 
 	higher priority in the buyer-order (sell-order) queue.  Market Order will be inserted before the limited 
 	orders which cannot cross the bid-ask price and after the existing market orders. Then the miner will pull 
-	the orders from the beginning of the queue and match the order by inserting three simple transactions into 
+	the orders from the beginning of the queue and match the order by inserting one simple transaction into 
 	a transaction array: 
-	1)  Buyer receives the tokens and seller receives fund. 
+	1) Buyer receives the tokens and seller receives fund. 
 	2) Buyer pays the order fee to the miner 
 	3) seller pays the order fee to the Developer Pool. Developer Pool will be allocated to developers 
 	following governance procedure that reward developers in the long-run by encouraging innovations and 
@@ -182,7 +184,8 @@
 	assets will need to be verified in procession of the tokens before a Dutch auction being carried out. 
 	A buyer of intention to buy a block can also initiate a  block trading by given an specified maximum 
 	price and intended amount and verification of procession of the fund. Listing fees and transaction 
-	will be collected by the miners. 
+	will be collected by the miners. The input of the tranasction will be funds from buyers, fees and tokens
+	from sellers/issuer. The output will be fees to miner, tokens to buyers and funds to the seller/issuer. 
 	
 ## Safety	
 	
