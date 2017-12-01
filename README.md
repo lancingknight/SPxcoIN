@@ -186,7 +186,7 @@
 	will be collected by the miners. The input of the tranasction will be funds from buyers, fees and tokens
 	from sellers/issuer. The output will be fees to miner, tokens to buyers and funds to the seller/issuer. 
 	
-## Safety	
+## Security
 	
 ### Free-riders
 	
