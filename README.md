@@ -62,7 +62,7 @@
 	There is a dynamically defined M(t) number of pools where the arrays are allocated to.  M(t) was updated 
 	by last block in the Blockchain at t. 
 	
-	At time t<s, a new candidate transaction X(t,i, j) is broadcasted by account i, after i obtained the 
+	At time s, t< s< t+1, a new candidate transaction X(s,i, j) is broadcasted by account i, after i obtained the 
 	approval of j. However, in order for the transaction to be processed, it needs to contribute to the system 
 	first by solving for the exsiting transactions, so it will at the same time broadcast 
 		a. last observed block time t, thus could observe a rule* to work in only one specified pool 
