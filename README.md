@@ -1,15 +1,14 @@
 
-# Minimal replica in a distributed database 
+# SPxcoIN - A Peer to Peer Exchange System  
 
 	Version 1.0	
 	Ling Wu
 	November 30, 2017
 
 ## Abstract
-	A crypto-currency protocol to minimize the distributed database and simplify verification procedures. 
-	It makes easy to verify the holdings of multiple assets. We created a protocol for listing and 
-	trading of standardized contracts within the system, which enables large number of transactions 
-	at low cost or no cost. 
+	A peer-to-peer protocol to minimize the distributed database and simplify verification of 
+	the holdings of multiple assets. We created a protocol for listing and trading of standardized 
+	contracts within the system, which enables large number of transactions at low cost or no cost. 
 
 ## Minimal Replica
 	
