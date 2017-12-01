@@ -27,7 +27,7 @@
 	And the database will be updated by deleting two old entries Ht and Ht′, and inserting two new entries 
 					Hv = Hash({Si(v), Pi})  
 					Hv′ = Hash({Sj(v), Pj})   
-	The above described minimal database will unload burden of storing the tansactions and account balances 
+	The above described Minimal Replica will unload burden of storing the tansactions and account balances 
 	off all the users,  except for the owner, who would have all the incentives to keep track of its own account 
 	balances. If N is number of accounts, the storage of the minimal replica would be O(N), and the speed of 
 	verification the state of an account will be O(logN). 
